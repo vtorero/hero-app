@@ -17,7 +17,7 @@ alter_ego,
 first_appearance,
 characters,}) => {
 
-  const heroImageUrl=`/assets/heroes/${id}.jpg`
+  const heroImageUrl=`/hero-app/assets/heroes/${id}.jpg`
   return (
     <div className="col">
         <div className="card animate__animated animate__fadeIn">
