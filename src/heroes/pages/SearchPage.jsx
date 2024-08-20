@@ -1,6 +1,6 @@
 
 import { useLocation, useNavigate } from 'react-router-dom';
-import querySting  from 'query-string';
+import querySting from 'querystring';
 import { useForm } from '../../hooks/useForm';
 import {HeroCard} from '../components/';
 import { getHeroesByName } from '../helpers';
