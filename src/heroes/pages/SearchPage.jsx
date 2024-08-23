@@ -1,6 +1,7 @@
 
 import { useLocation, useNavigate } from 'react-router-dom';
-import querySting from 'querystring';
+import querySting from 'query-string';
+
 import { useForm } from '../../hooks/useForm';
 import {HeroCard} from '../components/';
 import { getHeroesByName } from '../helpers';
@@ -25,6 +26,7 @@ const {searchText,onInputChange,} = useForm({
 
 const onSearchSubmit = (event) => {
   event.preventDefault();
+  console.log("desde testing form")
 
  // if(searchText.trim().length <= 1 ) return;
 
@@ -43,7 +45,7 @@ navigate(`?q=${searchText}`)
      <div className="col-5">
     <h4>Searching</h4>
     <hr />
-    <form onSubmit={onSearchSubmit}>
+    <form onSubmit={onSearchSubmit} aria-label="form">
       <input type="text"
       placeholder="Search a hero"
       className="form-control"
@@ -60,8 +62,8 @@ navigate(`?q=${searchText}`)
       <h4>Results</h4>
       <hr />
 
-  <div className="alert alert-primary animate__animated animate__fadeIn" style={{display: showSearch ?'':'none' }}>Search a hero </div>
-  <div className="alert alert-danger animate__animated animate__fadeIn"style={{display: showError ?'':'none' }} > No hero with <b>{q}</b> </div>
+  <div aria-label="div-search" className="alert alert-primary animate__animated animate__fadeIn" style={{display: showSearch ?'':'none' }}>Search a hero </div>
+  <div aria-label="div-alert"  className="alert alert-danger animate__animated animate__fadeIn" style={{display: showError ?'':'none' }} > No hero with <b>{q}</b> </div>
 
     {
       heroes.map((hero)=>(
